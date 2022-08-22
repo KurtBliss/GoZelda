@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var jump_strength := 20.0
 @export var gravity := 50.0
 var move_direction := Vector3.ZERO
+var last_move_direction := Vector3.ZERO
 
 @onready var _model : Sprite3D = $Sprite3D
 @onready var _spring_arm : LinksSpringArm3D = $SpringArm3D
@@ -36,7 +37,7 @@ func physics_movement(delta: float) -> void:
 	move_and_slide()
 	if velocity.length() > 0.2:
 		var look_direction = Vector2(velocity.z, velocity.x)
-		_model.rotation.y = look_direction.angle()
+		#_model.rotation.y = look_direction.angle()
 	_spring_arm.global_position = global_position
 	if Input.is_action_pressed("lock"):
 		if Input.is_action_just_pressed("lock"):
@@ -84,4 +85,12 @@ func play_walk_anime():
 
 func update_model_rotation():
 	_model.rotation.x = 0
+	var cam_x = (_camera.global_position - global_position).z
+	var cam_y = (_camera.global_position - global_position).x
+	var cam = Vector2(cam_x, cam_y)
+	var move = Vector2(last_move_direction.z, last_move_direction.x)
 	
+	_model.rotation.y = cam.angle() - move.angle_to(cam)
+	
+	if move_direction.length() > 0: 
+		last_move_direction = move_direction.normalized()

@@ -542,7 +542,7 @@ region_rect = Rect2(52, 285, 7, 15)
 shape = SubResource("SphereShape3D_hma8o")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 2.73972, 2.91444, 0, -2.91444, 2.73972, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 texture_filter = 0
 texture = ExtResource("5_0s360")
 region_enabled = true
