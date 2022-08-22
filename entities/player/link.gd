@@ -11,6 +11,7 @@ var last_move_direction := Vector3.ZERO
 @onready var _camera : Camera3D = $SpringArm3D/Camera3D
 @onready var _anime : AnimationPlayer = $AnimationPlayer
 @onready var state_helper = $StateHelper
+@onready var sword_pivot = $SwordPivot
 
 func _ready():
 	state_helper.reset("movement")
@@ -30,7 +31,7 @@ func physics_movement(delta: float) -> void:
 	else:
 		print("lock")
 	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized()
-	_anime.playback_speed = move_direction.length()	
+	#_anime.playback_speed = move_direction.length()	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
 	velocity.y -= gravity * delta
@@ -50,8 +51,13 @@ func physics_movement(delta: float) -> void:
 		play_walk_anime()
 	else:
 		play_stand_anime()
-	if Input.is_action_just_pressed("attack"):
-		pass
+	handle_attack()
+
+func handle_attack():
+	if !Input.is_action_just_pressed("attack"):
+		return
+	state_helper.reset("attack")
+	play_swing_anime()
 
 func update_movement_direction():
 	move_direction.x = Input.get_action_strength("right")
@@ -88,14 +94,16 @@ func update_model_rotation():
 		last_move_direction = move_direction#.normalized()
 
 func play_stand_anime():
-	if _anime.current_animation.contains("Right"):
+	if _anime.current_animation.count("Right") > 0:
 			_anime.play("StandRight")
-	if _anime.current_animation.contains("Left"):
+	elif _anime.current_animation.count("Left") > 0:
 		_anime.play("StandLeft")
-	if _anime.current_animation.contains("Up"):
+	elif _anime.current_animation.count("Up") > 0:
 		_anime.play("StandUp")
-	if _anime.current_animation.contains("Down"):
+	elif _anime.current_animation.count("Down") > 0:
 		_anime.play("StandDown")
+	else:
+		prints("AHHHH", _anime.current_animation)
 
 func play_walk_anime():
 	if Input.is_action_pressed("right"):
@@ -110,3 +118,18 @@ func play_walk_anime():
 	elif Input.is_action_pressed("up"): 
 		if !Input.is_action_pressed("left") && !Input.is_action_pressed("right"):
 			_anime.play("WalkUp")
+
+func play_swing_anime():
+	if _anime.current_animation.count("Right") > 0:
+		_anime.play("SwingRight", -1, 1)
+	elif _anime.current_animation.count("Left") > 0:
+		_anime.play("SwingLeft", -1, 1)
+	elif _anime.current_animation.count("Up") > 0:
+		_anime.play("SwingUp", -1, 1)
+	else:
+		_anime.play("SwingDown", -1, 1)
+	
+func _on_animation_player_animation_finished(anim_name):
+	if str(anim_name).count("Swing") > 0:
+		state_helper.reset("movement")
+		play_stand_anime()
