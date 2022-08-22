@@ -59,6 +59,34 @@ func update_movement_direction():
 	move_direction.z = Input.get_action_strength("down")
 	move_direction.z -= Input.get_action_strength("up")	
 
+func update_model_rotation():
+	_model.rotation.x = 0
+	var cam_x = (_camera.global_position - global_position).z
+	var cam_y = (_camera.global_position - global_position).x
+	var cam = Vector2(cam_x, cam_y)
+	var move = Vector2(last_move_direction.z, last_move_direction.x)
+	_model.rotation.y = cam.angle() #- (cam.angle_to(move) * 0.5)
+	if _anime.current_animation.contains("Up") or _anime.current_animation.contains("Down"):
+		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
+			_model.rotation.y -= deg2rad(45)
+		if Input.is_action_pressed("left") and Input.is_action_pressed("up"):
+			_model.rotation.y += deg2rad(45)
+		if Input.is_action_pressed("right") and Input.is_action_pressed("down"):
+			_model.rotation.y += deg2rad(45)
+		if Input.is_action_pressed("left") and Input.is_action_pressed("down"):
+			_model.rotation.y -= deg2rad(45)
+	else:
+		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
+			_model.rotation.y += deg2rad(45)
+		if Input.is_action_pressed("left") and Input.is_action_pressed("up"):
+			_model.rotation.y -= deg2rad(45)
+		if Input.is_action_pressed("right") and Input.is_action_pressed("down"):
+			_model.rotation.y -= deg2rad(45)
+		if Input.is_action_pressed("left") and Input.is_action_pressed("down"):
+			_model.rotation.y += deg2rad(45)	
+	if move_direction.length() > 0: 
+		last_move_direction = move_direction#.normalized()
+
 func play_stand_anime():
 	if _anime.current_animation.contains("Right"):
 			_anime.play("StandRight")
@@ -82,15 +110,3 @@ func play_walk_anime():
 	elif Input.is_action_pressed("up"): 
 		if !Input.is_action_pressed("left") && !Input.is_action_pressed("right"):
 			_anime.play("WalkUp")
-
-func update_model_rotation():
-	_model.rotation.x = 0
-	var cam_x = (_camera.global_position - global_position).z
-	var cam_y = (_camera.global_position - global_position).x
-	var cam = Vector2(cam_x, cam_y)
-	var move = Vector2(last_move_direction.z, last_move_direction.x)
-	
-	_model.rotation.y = cam.angle() - move.angle_to(cam)
-	
-	if move_direction.length() > 0: 
-		last_move_direction = move_direction.normalized()
