@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs8wiuv3axe2p"]
+
+[ext_resource type="Texture2D" uid="uid://m74o2282if7a" path="res://assets/kenney_prototypetextures/Green/texture_02.png" id="1_g31v4"]
+[ext_resource type="PackedScene" uid="uid://b8g0hxvc0ur1j" path="res://entities/player/link.tscn" id="2_3ajh4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqpu5"]
+
+[sub_resource type="Sky" id="Sky_cchuv"]
+sky_material = SubResource("ProceduralSkyMaterial_aqpu5")
+
+[sub_resource type="Environment" id="Environment_abm2v"]
+background_mode = 2
+sky = SubResource("Sky_cchuv")
+ambient_light_color = Color(0.917647, 0.917647, 0.917647, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01di"]
+albedo_texture = ExtResource("1_g31v4")
+uv1_triplanar = true
+
+[node name="World" type="WorldEnvironment"]
+environment = SubResource("Environment_abm2v")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_a01di")
+use_collision = true
+size = Vector3(21.1569, 0.54189, 13.6434)
+
+[node name="Link" parent="." instance=ExtResource("2_3ajh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91309, 0.670945, 2.60251)
