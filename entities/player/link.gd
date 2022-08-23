@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var gravity := 50.0
 var move_direction := Vector3.ZERO
 var last_move_direction := Vector3.ZERO
+var direction_string = "Down"
 
 @onready var _model : Sprite3D = $Sprite3D
 @onready var _spring_arm : LinksSpringArm3D = $SpringArm3D
@@ -94,37 +95,39 @@ func update_model_rotation():
 		last_move_direction = move_direction#.normalized()
 
 func play_stand_anime():
-	if _anime.current_animation.count("Right") > 0:
+	if direction_string == "Right":
 			_anime.play("StandRight")
-	elif _anime.current_animation.count("Left") > 0:
+	elif direction_string == "Left":
 		_anime.play("StandLeft")
-	elif _anime.current_animation.count("Up") > 0:
+	elif direction_string == "Up":
 		_anime.play("StandUp")
-	elif _anime.current_animation.count("Down") > 0:
-		_anime.play("StandDown")
 	else:
-		prints("AHHHH", _anime.current_animation)
+		_anime.play("StandDown")
 
 func play_walk_anime():
 	if Input.is_action_pressed("right"):
 		if !Input.is_action_pressed("down") && !Input.is_action_pressed("up"): 
 			_anime.play("WalkRight")
+			direction_string = "Right"
 	elif Input.is_action_pressed("left"): 
 		if !Input.is_action_pressed("down") && !Input.is_action_pressed("up"): 
 			_anime.play("WalkLeft")
+			direction_string = "Left"
 	elif Input.is_action_pressed("down"): 
 		if !Input.is_action_pressed("left") && !Input.is_action_pressed("right"): 
 			_anime.play("WalkDown")
+			direction_string = "Down"
 	elif Input.is_action_pressed("up"): 
 		if !Input.is_action_pressed("left") && !Input.is_action_pressed("right"):
 			_anime.play("WalkUp")
+			direction_string = "Up"
 
 func play_swing_anime():
-	if _anime.current_animation.count("Right") > 0:
+	if direction_string == "Right":
 		_anime.play("SwingRight", -1, 1)
-	elif _anime.current_animation.count("Left") > 0:
+	elif direction_string == "Left":
 		_anime.play("SwingLeft", -1, 1)
-	elif _anime.current_animation.count("Up") > 0:
+	elif direction_string == "Up":
 		_anime.play("SwingUp", -1, 1)
 	else:
 		_anime.play("SwingDown", -1, 1)
@@ -133,3 +136,8 @@ func _on_animation_player_animation_finished(anim_name):
 	if str(anim_name).count("Swing") > 0:
 		state_helper.reset("movement")
 		play_stand_anime()
+
+
+func _on_sword_area_entered(area):
+	if area.has_method("on_hit"):
+		area.call("on_hit")

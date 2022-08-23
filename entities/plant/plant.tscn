@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw36867krqivj"]
+
+[ext_resource type="Texture2D" uid="uid://b5ormmxhr1uwd" path="res://assets/grass.png" id="1_j6h0r"]
+[ext_resource type="Script" path="res://entities/plant/Area3D.gd" id="2_undfm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y118l"]
+size = Vector3(0.290559, 0.188253, 0.228752)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vt47"]
+size = Vector3(0.523548, 0.243379, 0.390652)
+
+[node name="Plant" type="Sprite3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.378883, 0)
+texture_filter = 0
+texture = ExtResource("1_j6h0r")
+
+[node name="PlantSide" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_j6h0r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_y118l")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_undfm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_3vt47")
