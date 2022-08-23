@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs8wiuv3axe2p"]
+[gd_scene load_steps=9 format=3 uid="uid://bs8wiuv3axe2p"]
 
 [ext_resource type="Texture2D" uid="uid://m74o2282if7a" path="res://assets/kenney_prototypetextures/Green/texture_02.png" id="1_g31v4"]
 [ext_resource type="PackedScene" uid="uid://b8g0hxvc0ur1j" path="res://entities/player/link.tscn" id="2_3ajh4"]
 [ext_resource type="PackedScene" uid="uid://dw36867krqivj" path="res://entities/plant/plant.tscn" id="3_tqat1"]
+[ext_resource type="PackedScene" uid="uid://0naobutyml7b" path="res://entities/rupee/rupee.tscn" id="4_04uv0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqpu5"]
 
@@ -55,3 +56,12 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.43873, 0.378883, 3.34576)
 
 [node name="Plant9" parent="." instance=ExtResource("3_tqat1")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.80709, 0.378883, -0.813524)
+
+[node name="Rupee" parent="." instance=ExtResource("4_04uv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5495, 0, -0.420131)
+
+[node name="Rupee2" parent="." instance=ExtResource("4_04uv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46169, 0, -1.95489)
+
+[node name="Rupee3" parent="." instance=ExtResource("4_04uv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82494, 0, -3.7405)

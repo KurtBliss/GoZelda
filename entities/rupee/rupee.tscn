@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://0naobutyml7b"]
+
+[ext_resource type="Script" path="res://entities/rupee/rupee.gd" id="1_2el6r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b0ut"]
+albedo_color = Color(0, 0.6, 0.00784314, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vdivg"]
+material = SubResource("StandardMaterial3D_7b0ut")
+radius = 0.25
+height = 1.0
+radial_segments = 4
+rings = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lu6d2"]
+size = Vector3(1, 1.6234, 1)
+
+[node name="Rupee" type="Area3D"]
+script = ExtResource("1_2el6r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504327, 0)
+mesh = SubResource("CapsuleMesh_vdivg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54672, 0)
+shape = SubResource("BoxShape3D_lu6d2")

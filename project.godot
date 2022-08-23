@@ -19,6 +19,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://entities/plant/Area3D.gd"
 }, {
+"base": "CharacterBody3D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://entities/player/link.gd"
+}, {
+"base": "Area3D",
+"class": &"RupeeArea3D",
+"language": &"GDScript",
+"path": "res://entities/rupee/rupee.gd"
+}, {
 "base": "Node",
 "class": &"StateHelper",
 "language": &"GDScript",
@@ -27,6 +37,8 @@ _global_script_classes=[{
 _global_script_class_icons={
 "LinksSpringArm3D": "",
 "PlantArea3D": "",
+"Player": "",
+"RupeeArea3D": "",
 "StateHelper": ""
 }
 
@@ -40,6 +52,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Mouse="*res://autoload/mouse.gd"
+PlayerData="*res://autoload/player_data.gd"
 
 [input]
 

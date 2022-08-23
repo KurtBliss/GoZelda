@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 @export var speed := 7.0
@@ -42,6 +43,7 @@ func physics_movement(delta: float) -> void:
 		#_model.rotation.y = look_direction.angle()
 	_spring_arm.global_position = global_position
 	if Input.is_action_pressed("lock"):
+		direction_string = "Up"
 		if Input.is_action_just_pressed("lock"):
 			_spring_arm.rotation.y = _model.rotation.y + deg2rad(180)
 		if move_direction.length() > 0:
@@ -141,3 +143,17 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_sword_area_entered(area):
 	if area.has_method("on_hit"):
 		area.call("on_hit")
+	if area is RupeeArea3D:
+		PlayerData.rupees += 1
+		if PlayerData.rupees > PlayerData.rupees_max:
+			PlayerData.rupees = PlayerData.rupees_max
+
+
+func _on_pickup_area_area_entered(area):
+	if area is RupeeArea3D:
+		PlayerData.rupees += 1
+		if PlayerData.rupees > PlayerData.rupees_max:
+			PlayerData.rupees = PlayerData.rupees_max
+		if area.has_method("on_hit"):
+			area.call("on_hit")
+

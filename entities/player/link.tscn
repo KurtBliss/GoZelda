@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8g0hxvc0ur1j"]
+[gd_scene load_steps=23 format=3 uid="uid://b8g0hxvc0ur1j"]
 
 [ext_resource type="Script" path="res://entities/player/link.gd" id="1_jrtt1"]
+[ext_resource type="Script" path="res://entities/player/HUD.gd" id="2_qp3gn"]
 [ext_resource type="Script" path="res://entities/player/spring_arm_3d.gd" id="4_i3fsa"]
 [ext_resource type="Script" path="res://helper/state_helper.gd" id="4_oohut"]
 [ext_resource type="Texture2D" uid="uid://rw5er7ngsrjr" path="res://assets/link.png" id="5_0s360"]
@@ -823,8 +824,28 @@ _data = {
 "WalkUp": SubResource("Animation_y4uvy")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wmae"]
+
 [node name="Link" type="CharacterBody3D"]
 script = ExtResource("1_jrtt1")
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_qp3gn")
+
+[node name="RupeesLabel" type="Label" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -54.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_layout_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_jxden")
@@ -870,5 +891,11 @@ libraries = {
 [node name="StateHelper" type="Node" parent="."]
 script = ExtResource("4_oohut")
 
+[node name="PickupArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+shape = SubResource("BoxShape3D_4wmae")
+
 [connection signal="area_entered" from="Sprite3D/SwordPivot/Sword" to="." method="_on_sword_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]
