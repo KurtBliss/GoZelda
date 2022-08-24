@@ -32,16 +32,16 @@ extends Node
 # Call processes of state
 func process(helpfor = self, delta = 0):
 	for state in states:
-		var call = prefix + state
-		if helpfor.has_method(call):
-			helpfor.call(call, delta)
+		var call_method = prefix + state
+		if helpfor.has_method(call_method):
+			helpfor.call(call_method, delta)
  
 # Call physic processes of state
 func phy_process(helpfor, delta = 0):
 	for state in states:
-		var call = phy_prefix + state
-		if helpfor.has_method(call):
-			helpfor.call(call, delta)
+		var call_method = phy_prefix + state
+		if helpfor.has_method(call_method):
+			helpfor.call(call_method, delta)
  
 #   Use these functions to change the state!
 #
@@ -53,25 +53,25 @@ func reset(state = []):
 		states = [state]
  
 # Add new process to state
-func add(process):
-	if process is Array:
-		for process_i in process:
+func add(process_state):
+	if process_state is Array:
+		for process_i in process_state:
 			add(process_i)
 	else:
-		if states.has(process):
+		if states.has(process_state):
 			return
-		states.append(process)
+		states.append(process_state)
  
 # Remove process from state
-func remove(process):
-	if process is Array:
-		for process_i in process:
+func remove(process_state):
+	if process_state is Array:
+		for process_i in process_state:
 			remove(process_i)
 	else:
-		var f = states.find(process)
+		var f = states.find(process_state)
 		if f == -1: return
 		states.remove(f)
  
-func has(process):
-	return states.has(process)
+func has(process_state):
+	return states.has(process_state)
 

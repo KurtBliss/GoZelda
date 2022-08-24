@@ -13,7 +13,6 @@ var direction_string = "Down"
 @onready var _camera : Camera3D = $SpringArm3D/Camera3D
 @onready var _anime : AnimationPlayer = $AnimationPlayer
 @onready var state_helper = $StateHelper
-@onready var sword_pivot = $SwordPivot
 
 func _ready():
 	state_helper.reset("movement")
@@ -70,7 +69,6 @@ func update_model_rotation():
 	var cam_x = (_camera.global_position - global_position).z
 	var cam_y = (_camera.global_position - global_position).x
 	var cam = Vector2(cam_x, cam_y)
-	var move = Vector2(last_move_direction.z, last_move_direction.x)
 	_model.rotation.y = cam.angle() #- (cam.angle_to(move) * 0.5)
 	if _anime.current_animation.contains("Up") or _anime.current_animation.contains("Down"):
 		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
