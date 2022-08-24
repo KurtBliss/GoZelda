@@ -38,9 +38,6 @@ func physics_movement(delta: float) -> void:
 	velocity.z = move_direction.z * speed
 	velocity.y -= gravity * delta
 	move_and_slide()
-	if velocity.length() > 0.2:
-		var look_direction = Vector2(velocity.z, velocity.x)
-		#_model.rotation.y = look_direction.angle()
 	_spring_arm.global_position = global_position
 	if Input.is_action_pressed("lock"):
 		direction_string = "Up"

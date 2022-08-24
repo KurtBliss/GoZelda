@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rw5er7ngsrjr"
-path="res://.godot/imported/link.png-37b488173a7b7d8a3998d7d0ceaf2922.ctex"
+uid="uid://h3vk2x5ajqj2"
+path="res://.godot/imported/BotW_Green_Rupee_Icon.png-7f332120b6ac836b6ed0e58a0ba62d09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/link.png"
-dest_files=["res://.godot/imported/link.png-37b488173a7b7d8a3998d7d0ceaf2922.ctex"]
+source_file="res://assets/BotW_Green_Rupee_Icon.png"
+dest_files=["res://.godot/imported/BotW_Green_Rupee_Icon.png-7f332120b6ac836b6ed0e58a0ba62d09.ctex"]
 
 [params]
 
