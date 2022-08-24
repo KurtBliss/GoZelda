@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01iq1owll4xe"]
+
+[ext_resource type="Texture2D" uid="uid://dgrl63iy3vtxc" path="res://assets/chuchu.png" id="1_rrj3o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07t00"]
+radius = 0.60324
+height = 1.20648
+
+[node name="Chuchu" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_07t00")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+texture = ExtResource("1_rrj3o")
+region_enabled = true
+region_rect = Rect2(202, 44, 12, 19)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite3D")
