@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccd7hovswckkv"
+path="res://.godot/imported/flood.wav-01be43ef7e27a4e5a218ff98cbb320ab.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/flood.wav"
+dest_files=["res://.godot/imported/flood.wav-01be43ef7e27a4e5a218ff98cbb320ab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

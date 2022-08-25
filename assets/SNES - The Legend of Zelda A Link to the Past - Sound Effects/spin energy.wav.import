@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckaqewwcod585"
+path="res://.godot/imported/spin energy.wav-cd0901c9407f3a25b1da3e21d8d5d577.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/spin energy.wav"
+dest_files=["res://.godot/imported/spin energy.wav-cd0901c9407f3a25b1da3e21d8d5d577.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

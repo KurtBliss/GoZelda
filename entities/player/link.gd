@@ -16,6 +16,7 @@ var direction_string = "Down"
 
 func _ready():
 	state_helper.reset("movement")
+	ref.player = self
 
 func _process(delta): 
 	state_helper.process(self, delta) 
@@ -53,7 +54,7 @@ func physics_movement(delta: float) -> void:
 	handle_attack()
 
 func handle_attack():
-	if !Input.is_action_just_pressed("attack"):
+	if !Input.is_action_just_pressed("attack") or !PlayerData.has_sword:
 		return
 	state_helper.reset("attack")
 	play_swing_anime()
@@ -128,7 +129,10 @@ func play_swing_anime():
 		_anime.play("SwingUp", -1, 1)
 	else:
 		_anime.play("SwingDown", -1, 1)
-	
+
+func on_hit():
+	print("player: on_hit()")
+
 func _on_animation_player_animation_finished(anim_name):
 	if str(anim_name).count("Swing") > 0:
 		state_helper.reset("movement")

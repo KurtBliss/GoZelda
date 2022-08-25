@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2oq6nam0l1j1"
+path="res://.godot/imported/fairy.wav-9be3aada5be0e8bc54e12f54af890598.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/fairy.wav"
+dest_files=["res://.godot/imported/fairy.wav-9be3aada5be0e8bc54e12f54af890598.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

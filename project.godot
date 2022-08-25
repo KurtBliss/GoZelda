@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Enemy",
+"class": &"Chuchu",
+"language": &"GDScript",
+"path": "res://entities/enemies/chuchu.gd"
+}, {
+"base": "CharacterBody3D",
+"class": &"Enemy",
+"language": &"GDScript",
+"path": "res://entities/enemies/enemy.gd"
+}, {
 "base": "SpringArm3D",
 "class": &"LinksSpringArm3D",
 "language": &"GDScript",
@@ -35,6 +45,8 @@ _global_script_classes=[{
 "path": "res://helper/state_helper.gd"
 }]
 _global_script_class_icons={
+"Chuchu": "",
+"Enemy": "",
 "LinksSpringArm3D": "",
 "PlantArea3D": "",
 "Player": "",
@@ -53,6 +65,7 @@ config/icon="res://icon.png"
 
 Mouse="*res://autoload/mouse.gd"
 PlayerData="*res://autoload/player_data.gd"
+ref="*res://autoload/ref.gd"
 
 [input]
 

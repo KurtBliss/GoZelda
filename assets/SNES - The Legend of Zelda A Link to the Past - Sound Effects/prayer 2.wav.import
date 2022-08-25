@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lph0l358unev"
+path="res://.godot/imported/prayer 2.wav-f7c425ac660694f78c28e5edda816117.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/prayer 2.wav"
+dest_files=["res://.godot/imported/prayer 2.wav-f7c425ac660694f78c28e5edda816117.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

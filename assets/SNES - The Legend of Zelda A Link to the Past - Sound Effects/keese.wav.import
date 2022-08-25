@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjwel7dj1lcpi"
+path="res://.godot/imported/keese.wav-53adbd58ecac6b797702bb9b2a164cf9.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/keese.wav"
+dest_files=["res://.godot/imported/keese.wav-53adbd58ecac6b797702bb9b2a164cf9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

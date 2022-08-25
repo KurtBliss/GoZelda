@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djlgl5jmhlbk3"
+path="res://.godot/imported/triforce room opens.wav-90230c7603c7335db8c8f38b17eb9ba2.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/triforce room opens.wav"
+dest_files=["res://.godot/imported/triforce room opens.wav-90230c7603c7335db8c8f38b17eb9ba2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

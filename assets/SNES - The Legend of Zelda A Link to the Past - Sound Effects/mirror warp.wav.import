@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr1j3dnaq5473"
+path="res://.godot/imported/mirror warp.wav-92b7b314706a2dc97e9deaf4d1fa35a9.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/mirror warp.wav"
+dest_files=["res://.godot/imported/mirror warp.wav-92b7b314706a2dc97e9deaf4d1fa35a9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

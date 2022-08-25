@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nvchyxpclb2i"
+path="res://.godot/imported/chest appears 1.wav-69a998c44444dc368b6494853f2fcb52.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/chest appears 1.wav"
+dest_files=["res://.godot/imported/chest appears 1.wav-69a998c44444dc368b6494853f2fcb52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

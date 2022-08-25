@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0ygydpsjy2o3"
+path="res://.godot/imported/large beam.wav-1b40cce33eb9b3e9c36541f49f950c5c.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/large beam.wav"
+dest_files=["res://.godot/imported/large beam.wav-1b40cce33eb9b3e9c36541f49f950c5c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

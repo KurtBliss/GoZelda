@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpfe5p0plyjpp"
+path="res://.godot/imported/button.wav-d3fbbeaaa7c035a452e686dd7f6b6ad1.sample"
+
+[deps]
+
+source_file="res://assets/SNES - The Legend of Zelda A Link to the Past - Sound Effects/button.wav"
+dest_files=["res://.godot/imported/button.wav-d3fbbeaaa7c035a452e686dd7f6b6ad1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
