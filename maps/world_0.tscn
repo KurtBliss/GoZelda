@@ -28,7 +28,7 @@ environment = SubResource("Environment_abm2v")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ymllp")
 use_collision = true
-size = Vector3(68.2351, 0.54189, 58.4805)
+size = Vector3(964.463, 0.54189, 236.456)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, 21.5679, 2.13792, 10.8682)
@@ -48,6 +48,60 @@ material_override = SubResource("StandardMaterial3D_ymllp")
 use_collision = true
 size = Vector3(30.479, 3.66466, 22.4744)
 
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, 66.5274, 2.13792, 15.5077)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, 45.6453, 2.13792, 26.6799)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.484107, 0, -0.875009, 0, 1, 0, 0.875009, 0, 0.484107, 31.6937, 2.13792, -15.9981)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, -33.6685, 2.13792, -2.0517)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, -54.5506, 2.13792, 9.1205)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(0.484107, 0, -0.875009, 0, 1, 0, 0.875009, 0, 0.484107, -68.5023, 2.13792, -33.5575)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, 2.95951, 2.13792, 77.0037)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(0.849423, 0, -0.527712, 0, 1, 0, 0.527712, 0, 0.849423, -17.9225, 2.13792, 88.1759)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(0.484107, 0, -0.875009, 0, 1, 0, 0.875009, 0, 0.484107, -31.8742, 2.13792, 45.4979)
+material_override = SubResource("StandardMaterial3D_ymllp")
+use_collision = true
+size = Vector3(30.479, 3.66466, 22.4744)
+
 [node name="Link" parent="." instance=ExtResource("2_3ajh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91309, 0.670945, 2.60251)
 
@@ -62,6 +116,30 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.29837, 0.378883, -0.138559)
 
 [node name="Plant4" parent="." instance=ExtResource("3_tqat1")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.0159996, 0.378883, -0.037509)
+
+[node name="Plant10" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.0312, 0.378883, 32.429)
+
+[node name="Plant11" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -21.3455, 0.378883, 32.53)
+
+[node name="Plant12" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.7366, 0.378883, 36.6088)
+
+[node name="Plant13" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20.051, 0.378883, 36.7098)
+
+[node name="Plant14" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 29.2635, 0.378883, 39.1476)
+
+[node name="Plant15" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 26.9491, 0.378883, 39.2486)
+
+[node name="Plant16" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 27.9135, 0.378883, 43.4233)
+
+[node name="Plant17" parent="." instance=ExtResource("3_tqat1")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 25.5991, 0.378883, 43.5244)
 
 [node name="Plant5" parent="." instance=ExtResource("3_tqat1")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.82185, 0.378883, 0.715169)
