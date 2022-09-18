@@ -59,5 +59,5 @@ func _on_start_jump_timer_timeout():
 
 
 func _on_area_3d_body_entered(body):
-	if body is Player:
+	if body.is_in_group("player"):
 		body.on_hit()

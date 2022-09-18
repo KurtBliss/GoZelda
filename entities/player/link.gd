@@ -166,9 +166,11 @@ func _on_pickup_area_area_entered(area):
 
 
 func _on_sword_body_entered(body):
-	
 	if body is Enemy:
+		print(body)
 		body.on_hit(35)
-		
-	
+	if body is Chuchu:
+		print("Chuchu")
+	if body is CharacterBody3D:
+		print("CharBody!")
 	

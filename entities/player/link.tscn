@@ -827,7 +827,7 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wmae"]
 
-[node name="Link" type="CharacterBody3D"]
+[node name="Link" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_jrtt1")
 
 [node name="HUD" type="Control" parent="."]
