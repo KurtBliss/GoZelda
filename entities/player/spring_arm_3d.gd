@@ -8,7 +8,7 @@ func _ready():
 
 func move_camera(move_vector):
 	rotation.x -= move_vector.y * mouse_sensitivity
-	rotation.x = clamp(rotation.x, deg2rad(-90.0), deg2rad(30.0))
+	rotation.x = clamp(rotation.x, deg_to_rad(-90.0), deg_to_rad(30.0))
 	
 	rotation.y -= move_vector.x * mouse_sensitivity
-	rotation.y = wrapf(rotation.y, deg2rad(0.0), deg2rad(360.0))
+	rotation.y = wrapf(rotation.y, deg_to_rad(0.0), deg_to_rad(360.0))

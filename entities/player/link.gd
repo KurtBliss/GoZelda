@@ -42,7 +42,7 @@ func physics_movement(delta: float) -> void:
 	if Input.is_action_pressed("lock"):
 		direction_string = "Up"
 		if Input.is_action_just_pressed("lock"):
-			_spring_arm.rotation.y = _model.rotation.y + deg2rad(180)
+			_spring_arm.rotation.y = _model.rotation.y + deg_to_rad(180)
 		if move_direction.length() > 0:
 			_anime.play("WalkUp")
 		else:
@@ -73,22 +73,22 @@ func update_model_rotation():
 	_model.rotation.y = cam.angle() #- (cam.angle_to(move) * 0.5)
 	if _anime.current_animation.contains("Up") or _anime.current_animation.contains("Down"):
 		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
-			_model.rotation.y -= deg2rad(45)
+			_model.rotation.y -= deg_to_rad(45)
 		if Input.is_action_pressed("left") and Input.is_action_pressed("up"):
-			_model.rotation.y += deg2rad(45)
+			_model.rotation.y += deg_to_rad(45)
 		if Input.is_action_pressed("right") and Input.is_action_pressed("down"):
-			_model.rotation.y += deg2rad(45)
+			_model.rotation.y += deg_to_rad(45)
 		if Input.is_action_pressed("left") and Input.is_action_pressed("down"):
-			_model.rotation.y -= deg2rad(45)
+			_model.rotation.y -= deg_to_rad(45)
 	else:
 		if Input.is_action_pressed("right") and Input.is_action_pressed("up"):
-			_model.rotation.y += deg2rad(45)
+			_model.rotation.y += deg_to_rad(45)
 		if Input.is_action_pressed("left") and Input.is_action_pressed("up"):
-			_model.rotation.y -= deg2rad(45)
+			_model.rotation.y -= deg_to_rad(45)
 		if Input.is_action_pressed("right") and Input.is_action_pressed("down"):
-			_model.rotation.y -= deg2rad(45)
+			_model.rotation.y -= deg_to_rad(45)
 		if Input.is_action_pressed("left") and Input.is_action_pressed("down"):
-			_model.rotation.y += deg2rad(45)	
+			_model.rotation.y += deg_to_rad(45)	
 	if move_direction.length() > 0: 
 		last_move_direction = move_direction#.normalized()
 
