@@ -33,6 +33,10 @@ func physics_movement(delta: float) -> void:
 	else:
 		print("lock")
 	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized()
+	
+	if move_direction.length() > 0: 
+		last_move_direction = move_direction#.normalized()
+			
 	#_anime.playback_speed = move_direction.length()	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
@@ -41,8 +45,12 @@ func physics_movement(delta: float) -> void:
 	_spring_arm.global_position = global_position
 	if Input.is_action_pressed("lock"):
 		direction_string = "Up"
+		
 		if Input.is_action_just_pressed("lock"):
-			_spring_arm.rotation.y = _model.rotation.y + deg_to_rad(180)
+			#_spring_arm.rotation.y = _model.rotation.y + deg_to_rad(180)
+			var angle = Vector2(last_move_direction.z, \
+				last_move_direction.x).angle()
+			_spring_arm.rotation.y = angle + deg_to_rad(180)
 		if move_direction.length() > 0:
 			_anime.play("WalkUp")
 		else:
@@ -89,8 +97,7 @@ func update_model_rotation():
 			_model.rotation.y -= deg_to_rad(45)
 		if Input.is_action_pressed("left") and Input.is_action_pressed("down"):
 			_model.rotation.y += deg_to_rad(45)	
-	if move_direction.length() > 0: 
-		last_move_direction = move_direction#.normalized()
+	
 
 func play_stand_anime():
 	if direction_string == "Right":
@@ -156,3 +163,12 @@ func _on_pickup_area_area_entered(area):
 		if area.has_method("on_hit"):
 			area.call("on_hit")
 
+
+
+func _on_sword_body_entered(body):
+	
+	if body is Enemy:
+		body.on_hit(35)
+		
+	
+	
